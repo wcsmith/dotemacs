@@ -13,5 +13,5 @@ Get it with:
 - `package-init/` - contains package initialization files.
 - `vendor/` - contains manually installed third party packages.
 - `vendor-init/` - contains vendor initialization files.
-- `.emacs-custom` - contains emacs customizations.
+- `.emacs-custom.el` - contains emacs customizations.
 - `snippets/` - contains user snippets for `yasnippet`
