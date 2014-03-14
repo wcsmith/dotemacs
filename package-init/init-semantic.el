@@ -1,0 +1,6 @@
+(defun my-semantic-hook ()
+  (semantic-mode 1)
+  (global-semantic-mru-bookmark-mode 1)
+  (global-semantic-show-parser-state-mode 1))
+(add-hook 'c-mode-hook 'my-start-semantic)
+(add-hook 'c++-mode-hook 'my-start-semantic)

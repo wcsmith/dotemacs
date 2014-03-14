@@ -1,0 +1,11 @@
+# .emacs.d directory
+/ac-comphist.dat
+/auto-save-list
+/elpa
+/projectile-bookmarks.eld
+/semanticdb
+/session*
+/tramp
+
+# compiled files
+*.elc

@@ -1,0 +1,1 @@
+(global-surround-mode t)
