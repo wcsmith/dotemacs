@@ -11,6 +11,7 @@
     evil-matchit
     evil-nerd-commenter
     evil-numbers
+    flx-ido
     dash
     ido
     ido-hacks
