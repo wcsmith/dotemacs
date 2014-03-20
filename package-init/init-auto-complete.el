@@ -28,39 +28,13 @@
 ;; SOURCES
 
 ;; default
-(setq ac-default-sources
-      '(ac-source-yasnippet
-	ac-source-dictionary))
-(setq-default ac-sources ac-default-sources)
+(setq-default ac-sources '())
 
 ;; emacs lisp
-(setq ac-emacs-lisp-sources
-      (append '(ac-source-functions
-		ac-source-symbols
-		ac-source-variables)
-	      ac-default-sources))
-
 (add-hook 'emacs-lisp-mode-hook
-	  '(lambda () (setq ac-sources ac-emacs-lisp-sources)))
-
-;; c mode
-(setq ac-c-common-sources
-      (append '()
-	      ac-default-sources))
-
-(add-hook 'c-mode-common-hook
-	  '(lambda () (setq ac-sources ac-c-common-sources)))
-
-;; python
-(setq ac-python-sources
-      (append '(ac-source-jedi-direct)
-	      ac-default-sources))
-(after 'jedi
-  (add-to-list 'ac-python-sources 'ac-source-jedi-direct))
-
-(add-hook 'c-mode-common-hook
-	  '(lambda () (setq ac-sources ac-python-sources)))
-
+	  '(lambda () (setq ac-sources '(ac-source-functions
+					 ac-source-symbols
+					 ac-source-variables))))
 
 ;; GLOBAL MODE
 (global-auto-complete-mode t)
