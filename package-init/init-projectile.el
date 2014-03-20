@@ -1,5 +1,8 @@
 (projectile-global-mode t)
 
+;; eclipse projects
+(add-to-list 'projectile-project-root-files ".project")
+
 (after 'ack-and-a-half
   (defun ack-or-projectile-ack ()
     (interactive)
