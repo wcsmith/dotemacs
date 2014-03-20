@@ -1,9 +1,10 @@
 (defun my-jedi-mode-hook ()
-  ;; TODO: add check for ipython and dependencies
   (jedi:setup)
   (setq jedi:tooltip-method nil)
   (setq jedi:get-in-function-call-delay 0)
   (define-key python-mode-map (kbd "M-.") 'jedi:goto-definition)
-  (define-key python-mode-map (kbd "M-*") 'jedi:goto-definition-pop-marker))
+  (define-key python-mode-map (kbd "M-*") 'jedi:goto-definition-pop-marker)
+  (setq-local ac-auto-show-menu t)
+  (setq-local ac-auto-start t))
 
 (add-hook 'python-mode-hook 'my-jedi-mode-hook)
