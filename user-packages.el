@@ -5,18 +5,20 @@
     ack-and-a-half
     auto-complete
     autopair
+    dash
+    diminish
+    emacs-eclim
     evil
     evil-indent-textobject
     evil-leader
     evil-matchit
     evil-nerd-commenter
     evil-numbers
-    flx-ido
-    dash
     ido
     ido-hacks
     ido-ubiquitous
     ido-vertical-mode
+    imenu-anywhere
     jedi
     key-chord
     magit
@@ -25,8 +27,8 @@
     pymacs
     s
     shell-pop
-    surround
     smex
+    surround
     window-numbering
     yasnippet
   ))

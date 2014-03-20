@@ -3,9 +3,12 @@
 /auto-save-list
 /elpa
 /projectile-bookmarks.eld
+/.python-environments
 /semanticdb
 /session*
+/TAGS
 /tramp
+/url
 
 # compiled files
 *.elc
