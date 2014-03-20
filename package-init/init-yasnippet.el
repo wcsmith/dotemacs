@@ -12,6 +12,5 @@
 (define-key yas-minor-mode-map (kbd "M-/") 'yas-expand)
 
 (define-key yas-minor-mode-map [(tab)] nil)
-(define-key yas-minor-mode-map (kbd "TAB") nil)
 
 (yas-global-mode 1)
