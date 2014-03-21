@@ -2,9 +2,11 @@
 
 (defvar user-packages
   '(
+    ace-jump-mode
     ack-and-a-half
     auto-complete
     autopair
+    ctags
     dash
     diminish
     emacs-eclim
@@ -20,6 +22,8 @@
     ido-vertical-mode
     imenu-anywhere
     jedi
+    ac-js2
+    js2-mode
     key-chord
     magit
     multi-term

@@ -17,3 +17,7 @@
 ;; move in insert
 (define-key evil-insert-state-map (kbd "M-l") 'forward-char)
 (define-key evil-insert-state-map (kbd "M-j") 'backward-char)
+
+;; ace jump
+(after 'ace-jump-mode
+  (define-key evil-normal-state-map (kbd "gw") 'evil-ace-jump-word-mode))
