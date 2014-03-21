@@ -16,6 +16,7 @@
 
 ;; maps
 (setq ac-use-menu-map t)
+(define-key ac-menu-map "\M-s" 'ac-isearch)
 (define-key ac-menu-map "\C-j" 'ac-next)
 (define-key ac-menu-map "\C-k" 'ac-previous)
 (define-key ac-menu-map "\C-n" 'ac-next)
