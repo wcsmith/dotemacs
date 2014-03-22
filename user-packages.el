@@ -6,7 +6,6 @@
     ack-and-a-half
     auto-complete
     autopair
-    ctags
     dash
     diminish
     emacs-eclim
@@ -16,6 +15,9 @@
     evil-matchit
     evil-nerd-commenter
     evil-numbers
+    expand-region
+    flycheck
+    ggtags
     ido
     ido-hacks
     ido-ubiquitous
