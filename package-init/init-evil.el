@@ -4,7 +4,7 @@
 (define-key evil-normal-state-map "j" 'evil-next-visual-line)
 (define-key evil-normal-state-map "k" 'evil-previous-visual-line)
 
-;; unbind
+;; single press escape
 (define-key evil-normal-state-map [escape] 'keyboard-quit)
 (define-key evil-visual-state-map [escape] 'keyboard-quit)
 (define-key minibuffer-local-map [escape] 'minibuffer-keyboard-quit)
@@ -12,6 +12,8 @@
 (define-key minibuffer-local-completion-map [escape] 'minibuffer-keyboard-quit)
 (define-key minibuffer-local-must-match-map [escape] 'minibuffer-keyboard-quit)
 (define-key minibuffer-local-isearch-map [escape] 'minibuffer-keyboard-quit)
+
+;; unbind
 (define-key evil-insert-state-map [remap newline] 'nil)
 (define-key evil-insert-state-map [remap newline-and-indent] 'nil)
 (define-key evil-insert-state-map (kbd "RET") 'nil)
