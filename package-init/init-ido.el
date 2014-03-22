@@ -7,5 +7,6 @@
 (setq ido-enable-flex-matching t)
 (setq ido-everywhere t)
 (setq ido-use-virtual-buffers t)
+(setq ido-auto-merge-delay-time nil)
 
 (ido-mode t)
