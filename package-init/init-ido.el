@@ -8,5 +8,6 @@
 (setq ido-everywhere t)
 (setq ido-use-virtual-buffers t)
 (setq ido-auto-merge-delay-time nil)
+(setq ido-auto-merge-work-directories-length -1)
 
 (ido-mode t)
