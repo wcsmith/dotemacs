@@ -1,5 +1,10 @@
 (evil-mode 1)
 
+;; default state for modes
+(add-to-list 'evil-insert-state-modes 'git-commit-mode)
+(setq evil-insert-state-modes (remove 'gud-mode evil-insert-state-modes))
+(add-to-list 'evil-emacs-state-modes 'gud-mode)
+
 ;; move by visual line
 (define-key evil-normal-state-map "j" 'evil-next-visual-line)
 (define-key evil-normal-state-map "k" 'evil-previous-visual-line)
