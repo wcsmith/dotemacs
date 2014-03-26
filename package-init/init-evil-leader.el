@@ -11,14 +11,12 @@
 ;; compile (c)
 (evil-leader/set-key "c c" 'recompile)
 (evil-leader/set-key "c C" 'compile)
-(evil-leader/set-key "c n" 'next-error)
-(evil-leader/set-key "c p" 'previous-error)
 
 (after 'eclim
   (evil-leader/set-key-for-mode 'java-mode "c c" 'eclim-problems-compilation-buffer)
   (evil-leader/set-key-for-mode 'java-mode "c f" 'eclim-problems-correct))
 
-;; gdb (g)
+;; gdb (d)
 (evil-leader/set-key "d g" 'gdb)
 (evil-leader/set-key "d w" 'gdb-restore-windows)
 (evil-leader/set-key "d c" '(lambda () (interactive) (gdb-select-window 'comint)))
@@ -40,7 +38,7 @@
 (evil-leader/set-key "f n" 'find-name-dired)
 (evil-leader/set-key "f c" 'find-grep-dired)
 
-;; navigating source code (t)
+;; navigating source code (g)
 (evil-leader/set-key "g h" 'ff-find-other-file)
 (evil-leader/set-key "g t" 'find-tag)
 

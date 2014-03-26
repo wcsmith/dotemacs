@@ -10,4 +10,11 @@
 (setq ido-auto-merge-delay-time nil)
 (setq ido-auto-merge-work-directories-length -1)
 
+(define-key ido-common-completion-map "\M-j" 'ido-next-match)
+(define-key ido-common-completion-map "\M-k" 'ido-prev-match)
+(define-key ido-common-completion-map (kbd "<M-return>") 'ido-select-text)
+(define-key minibuffer-local-map "\M-j" 'ido-next-match)
+(define-key minibuffer-local-map "\M-k" 'ido-prev-match)
+(define-key minibuffer-local-map (kbd "<M-return>") 'ido-select-text)
+
 (ido-mode t)

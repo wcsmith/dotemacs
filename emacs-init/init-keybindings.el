@@ -10,6 +10,10 @@
 (global-set-key (kbd "M-K") 'scroll-down)
 (global-set-key (kbd "M-J") 'scroll-up)
 
+;; compilation
+(global-set-key (kbd "M-k") 'previous-error)
+(global-set-key (kbd "M-j") 'next-error)
+
 ;; quit
 (global-set-key (kbd "M-q") 'abort-recursive-edit)
 
