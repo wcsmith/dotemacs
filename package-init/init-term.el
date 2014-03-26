@@ -1,5 +1,4 @@
 (add-hook 'term-mode-hook '(lambda() (set (make-local-variable 'global-hl-line-mode) nil)))
-(add-hook 'term-mode-hook '(lambda () (linum-mode 0)))
 
 (defun my-term-cd (term dir)
   (term-send-string term (format "\C-ucd %s\n" dir)))
