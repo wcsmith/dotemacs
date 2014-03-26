@@ -10,6 +10,12 @@
 (global-set-key (kbd "M-K") 'scroll-down)
 (global-set-key (kbd "M-J") 'scroll-up)
 
+;; quit
+(global-set-key (kbd "M-q") 'abort-recursive-edit)
+
+;; newline
+(global-set-key (kbd "RET") 'newline-and-indent)
+
 ;; tab
 (global-set-key (kbd "TAB") 'my-jump-line)
 
