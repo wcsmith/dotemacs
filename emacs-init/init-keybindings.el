@@ -42,13 +42,15 @@
 ;; windows
 (define-key fast-map "!" 'delete-other-windows)
 (define-key fast-map "0" 'delete-window)
-(define-key fast-map "1" 'delete-other-windows-vertically)
+(define-key fast-map "1" 'delete-other-windows-vertically-first)
 (define-key fast-map "2" 'split-window-vertically)
 (define-key fast-map "3" 'split-window-horizontally)
+(define-key fast-map "4" 'swap-buffer-to-primary-window)
 (define-key fast-map (kbd "M-0") 'delete-window)
-(define-key fast-map (kbd "M-1") 'delete-other-windows-vertically)
+(define-key fast-map (kbd "M-1") 'delete-other-windows-vertically-first)
 (define-key fast-map (kbd "M-2") 'split-window-vertically)
 (define-key fast-map (kbd "M-3") 'split-window-horizontally)
+(define-key fast-map (kbd "M-4") 'swap-buffer-to-primary-window)
 
 ;; files and buffers
 (define-key fast-map "F" 'find-file)
@@ -82,7 +84,6 @@
   (define-key fast-map "j" 'winner-undo)
   (define-key fast-map (kbd "M-l") 'winner-redo)
   (define-key fast-map "l" 'winner-redo))
-
 
 ;; KEY-CHORD
 (after 'key-chord
