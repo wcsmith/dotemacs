@@ -4,6 +4,10 @@
 (add-to-list 'evil-insert-state-modes 'git-commit-mode)
 (setq evil-insert-state-modes (remove 'gud-mode evil-insert-state-modes))
 (add-to-list 'evil-emacs-state-modes 'gud-mode)
+(setq evil-emacs-state-modes (remove 'Custom-mode evil-emacs-state-modes))
+(add-to-list 'evil-normal-state-modes 'Custom-mode)
+(setq evil-emacs-state-modes (remove 'term-mode evil-emacs-state-modes))
+(add-to-list 'evil-normal-state-modes 'term-mode)
 
 ;; move by visual line
 (define-key evil-normal-state-map "j" 'evil-next-visual-line)
@@ -30,7 +34,7 @@
 
 ;; move in insert
 (define-key evil-insert-state-map (kbd "M-l") 'forward-char)
-(define-key evil-insert-state-map (kbd "M-j") 'backward-char)
+(define-key evil-insert-state-map (kbd "M-h") 'backward-char)
 
 ;; ace jump
 (after 'ace-jump-mode
