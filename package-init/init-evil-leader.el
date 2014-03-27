@@ -37,6 +37,7 @@
 (evil-leader/set-key "f r" 'rgrep)
 (evil-leader/set-key "f n" 'find-name-dired)
 (evil-leader/set-key "f c" 'find-grep-dired)
+(evil-leader/set-key "f b" 'grep-buffers)
 
 ;; navigating source code (g)
 (evil-leader/set-key "g h" 'ff-find-other-file)
