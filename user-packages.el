@@ -5,10 +5,12 @@
     ace-jump-mode
     ack-and-a-half
     auto-complete
+    auto-complete-clang
     autopair
     dash
     diminish
     emacs-eclim
+    emmet-mode
     evil
     evil-indent-textobject
     evil-leader
