@@ -8,6 +8,7 @@
 (add-to-list 'evil-normal-state-modes 'Custom-mode)
 (setq evil-insert-state-modes (remove 'term-mode evil-insert-state-modes))
 (add-to-list 'evil-emacs-state-modes 'term-mode)
+(add-to-list 'evil-normal-state-modes 'wdired-mode)
 
 ;; move by visual line
 (define-key evil-normal-state-map "j" 'evil-next-visual-line)
