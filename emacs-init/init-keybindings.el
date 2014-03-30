@@ -3,7 +3,7 @@
 ;; GLOBAL
 
 ;; aborts
-(global-set-key (kbd "M-g") 'abort-recursive-edit)
+(global-set-key (kbd "M-g") 'keyboard-quit)
 
 ;; scrolling
 (global-set-key (kbd "M-;") 'recenter-top-bottom)
@@ -15,7 +15,11 @@
 (global-set-key (kbd "M-j") 'next-error)
 
 ;; quit
-(global-set-key (kbd "M-q") 'abort-recursive-edit)
+(global-set-key (kbd "M-q") 'keyboard-quit)
+
+;; mark ring
+(global-set-key (kbd "M-<") '(lambda () (interactive) (set-mark-command t)))
+(global-set-key (kbd "M->") 'push-mark)
 
 ;; newline
 (global-set-key (kbd "RET") 'newline-and-indent)
@@ -62,6 +66,11 @@
 (define-key fast-map "s" 'save-buffer)
 (define-key fast-map "d" 'dired)
 
+;; imenu
+(define-key fast-map "g" 'imenu)
+(after 'imenu-anywhere
+  (define-key fast-map "g" 'imenu-anywhere))
+
 ;; projectile
 (after 'projectile
   (define-key fast-map "p" 'projectile-switch-project)
@@ -72,7 +81,6 @@
 			       (ido-find-file)))))
 
 ;; aborts
-(define-key fast-map "g" 'abort-recursive-edit)
 (define-key fast-map "q" 'abort-recursive-edit)
 
 ;; lisp
