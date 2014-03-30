@@ -31,6 +31,7 @@
     key-chord
     magit
     multi-term
+    multiple-cursors
     projectile
     pymacs
     s
