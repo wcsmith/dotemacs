@@ -2,7 +2,9 @@
 /ac-comphist.dat
 /auto-save-list
 /elpa
+/.mc-lists.el
 /projectile-bookmarks.eld
+/projectile.cache
 /.python-environments
 /semanticdb
 /session*
