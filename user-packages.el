@@ -5,7 +5,6 @@
     ace-jump-mode
     ack-and-a-half
     auto-complete
-    auto-complete-clang
     autopair
     dash
     diminish

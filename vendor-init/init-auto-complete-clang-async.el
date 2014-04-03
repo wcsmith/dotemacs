@@ -1,4 +1,4 @@
-(require 'auto-complete-clang)
+(require 'auto-complete-clang-async)
 
 (setq clang-completion-supress-error 't)
 
@@ -15,10 +15,12 @@
 "
                )))
 
-(defun setup-ac-clang ()
-  (setq ac-sources '(ac-source-clang))
-  (setq-local ac-auto-start t)
-  (setq-local ac-auto-show-menu t))
+(defun ac-clang-setup ()
+  (setq ac-clang-complete-executable
+	"~/.emacs.d/vendor/emacs-clang-complete-async/clang-complete")
+  (setq ac-sources '(ac-source-clang-async))
+  (ac-clang-launch-completion-process)
+)
 
-(add-hook 'c++-mode-hook 'setup-ac-clang)
-(add-hook 'c-mode-hook 'setup-ac-clang)
+(add-hook 'c-mode-hook 'ac-clang-setup)
+(add-hook 'c++-mode-hook 'ac-clang-setup)
