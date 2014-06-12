@@ -1,3 +1,6 @@
 [submodule "vendor/emacs-clang-complete-async"]
 	path = vendor/emacs-clang-complete-async
 	url = https://github.com/golevka/emacs-clang-complete-async
+[submodule "vendor/evil-plugins"]
+	path = vendor/evil-plugins
+	url = https://github.com/tarao/evil-plugins.git
