@@ -95,9 +95,10 @@
 (add-to-list 'package-archives
   '("melpa" . "http://melpa.milkbox.net/packages/") t)
 
-;;(package-refresh-contents)
-
+;; initialize package and refresh archive if necessary
 (package-initialize)
+(unless package-archive-contents
+  (package-refresh-contents))
 
 ;; load emacs init files
 (progn
