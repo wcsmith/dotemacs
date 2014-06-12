@@ -1,1 +1,2 @@
-(require 'ack-and-a-half)
+(use-package 'ack-and-a-half
+  :install t)

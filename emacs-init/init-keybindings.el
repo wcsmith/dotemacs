@@ -18,7 +18,7 @@
 (global-set-key (kbd "M-q") 'keyboard-quit)
 
 ;; mark ring
-(global-set-key (kbd "M-<") '(lambda () (interactive) (set-mark-command t)))
+(global-set-key (kbd "M-<") (ilambda (set-mark-command t)))
 (global-set-key (kbd "M->") 'push-mark)
 
 ;; newline
@@ -30,7 +30,7 @@
 ;; shell-pop
 (after 'shell-pop
   (global-set-key (kbd "<f12>") 'shell-pop)
-  (global-set-key (kbd "<f11>") '(lambda () (interactive) (shell-pop 11))))
+  (global-set-key (kbd "<f11>") (ilambda (shell-pop 11))))
 
 ;; smex
 (after 'smex
@@ -75,7 +75,7 @@
 (after 'projectile
   (define-key fast-map "p" 'projectile-switch-project)
   (define-key fast-map "B" 'projectile-switch-to-buffer)
-  (define-key fast-map "f" '(lambda () (interactive)
+  (define-key fast-map "f" (lambda () (interactive)
 			     (if (projectile-project-p)
 				 (projectile-find-file)
 			       (ido-find-file)))))

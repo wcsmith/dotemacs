@@ -1,4 +1,6 @@
-(require 'multi-term)
+(use-package 'multi-term
+  :install t
 
-(setq multi-term-program (case system-type (('gnu/linux (getenv "SHELL"))
-					    ('windows-nt "/bin/bash"))))
+  :config
+  (setq multi-term-program (case system-type (('gnu/linux (getenv "SHELL"))
+					      ('windows-nt "/bin/bash")))))

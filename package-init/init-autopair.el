@@ -1,4 +1,8 @@
-(autopair-global-mode 1)
+(use-package 'autopair
+  :install t
 
-(add-hook 'term-mode-hook
-	  (lambda () (autopair-mode 0)))
+  :config
+  (progn
+    (autopair-global-mode 1)
+    (hook 'term-mode-hook
+      (autopair-mode 0))))

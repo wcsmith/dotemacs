@@ -1,7 +1,11 @@
-(require 'flycheck)
+(use-package 'flycheck
+  :install t
+  :defer t
 
-(setq flycheck-check-syntax-automatically '(save mode-enabled))
-
-(add-hook 'c-mode-common-hook '(lambda () (flycheck-mode)))
-(add-hook 'python-mode-hook '(lambda () (flycheck-mode)))
-(add-hook 'cperl-mode-hook '(lambda () (flycheck-mode)))
+  :init
+  (progn
+    (setq flycheck-check-syntax-automatically '(save mode-enabled))
+    (hook '(c-mode-common-hook
+	    python-mode-hook
+	    cperl-mode-hook)
+      (flycheck-mode))))

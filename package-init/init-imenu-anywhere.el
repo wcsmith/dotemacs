@@ -1,1 +1,2 @@
-(require 'imenu-anywhere)
+(use-package 'imenu-anywhere
+  :install t)

@@ -1,1 +1,3 @@
-(winner-mode 1)
+(use-package 'winner
+  :config
+  (winner-mode 1))

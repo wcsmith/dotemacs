@@ -1,3 +1,6 @@
-(after 'ido
-  (require 'ido-ubiquitous)
+(use-package 'ido-ubiquitous
+  :install t
+  :requires 'ido
+
+  :config
   (ido-ubiquitous-mode t))

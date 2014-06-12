@@ -1,3 +1,5 @@
-(require 'expand-region)
+(use-package 'expand-region
+  :install t
 
-(global-set-key (kbd "M-v") 'er/expand-region)
+  :config
+  (global-set-key (kbd "M-v") 'er/expand-region))

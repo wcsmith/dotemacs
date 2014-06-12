@@ -1,2 +1,3 @@
-(after 'evil
-  (require 'evil-nerd-commenter))
+(use-package 'evil-nerd-commenter
+  :install t
+  :requires 'evil)

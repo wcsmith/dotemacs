@@ -1,6 +1,10 @@
 ;; gud setup
+(use-package 'gud
+  :defer t
 
-(add-hook 'gud-mode-hook '(lambda () (linum-mode 0)))
+  :config
+  (hook 'gud-mode-hook
+    (linum-mode 0)))
 
 ;; gdb-select-window (courtesy of Mark Shroyer)
 ;; For the consistency of gdb-select-window's calling convention...

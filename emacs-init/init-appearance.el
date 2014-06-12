@@ -6,8 +6,12 @@
 (setq inhibit-startup-message t
       inhibit-startup-echo-area-message t)
 
+;; theme
+;;(load-theme 'wcsmith)
+
 ;; text size
-(set-face-attribute 'default nil :height 105)
+(set-frame-font "Inconsolatazi4")
+(set-face-attribute 'default nil :height 110)
 
 ;; highlight line
 (global-hl-line-mode 1)

@@ -2,8 +2,7 @@
 (blink-cursor-mode -1)
 
 ;; no tabs
-(setq tab-width 4
-      indent-tabs-mode nil)
+(setq tab-width 4 indent-tabs-mode nil)
 
 ;; no backups
 (setq make-backup-files nil)

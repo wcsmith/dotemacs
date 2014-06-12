@@ -1,1 +1,2 @@
-(require 'ace-jump-mode)
+(use-package 'ace-jump-mode
+  :install t)

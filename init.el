@@ -1,9 +1,12 @@
-;; COMMON LISP
+;;; init.el
+
+;; REQUIRES
 
 (require 'cl)
+(require 'package)
 
 
-;; ENVIRONMENT VARIABLES
+;; ENVIRONMENT
 
 (setq user-full-name "Connor Smith")
 (setq user-mail-address "wconnorsmith@gmail.com")
@@ -12,23 +15,89 @@
   (expand-file-name (concat user-emacs-directory "../"))
   "The user's home directory.")
 
-(defvar user-workspace-directory
-  (expand-file-name (concat user-home-directory "workspace/"))
-  "The user's workspace directory.")
 
+;; LOADING MACROS/DEFUNS
 
-;; AFTER MACRO
+(defun ensure-installed (package &optional load-immediately)
+  "Ensures that FEATURE is installed."
+  (unless (locate-library (symbol-name package))
+    (when (not (package-installed-p package))
+      (package-install package)))
+  (when load-immediately
+    (require package)))
 
-(defmacro after (mode &rest body)
-  "`eval-after-load' MODE evaluate BODY."
+(defmacro after (features &rest body)
+  "Evaluates BODY after all FEATURES have loaded."
+  (when (and (listp features)
+	     (eq (car features) 'quote))
+    (setq features (nth 1 features)))
+  (when (not (listp features))
+    (setq features (list features)))
+  (if (= (length features) 1)
+      `(eval-after-load ',(car features) '(progn ,@body))
+    `(eval-after-load ',(car features) '(after ,(cdr features) ,@body))))
+
+(defmacro* use-package (package &optional &key install requires defer init
+				config)
+  "Use a package."
+  ;; allow either 'package or package
+  (when (and (listp package)
+	     (eq (car package) 'quote))
+    (setq package (nth 1 package)))
+  ;; install
+  `(progn
+     ,(when install
+	`(ensure-installed (quote ,package)))
+     ;; init and config
+     ,(if (not requires)
+	  `(progn 
+	     ,init
+	     ,(if defer
+		  `(after ,package ,config)
+		`(progn (require ',package) ,config)))
+	`(after ,requires
+	   ,init
+	   ,(if defer
+		`(after ,package ,config)
+	      `(progn (require ',package) ,config))))))
+
+(defmacro when-fbound (function &rest body)
+  "Evaluates BODY if FUNCTION is bound."
   (declare (indent defun))
-  `(eval-after-load ,mode
-     '(progn ,@body)))
+  `(when (fboundp ,function)
+     ,@body))
+
+(defmacro hook (hooks &rest body)
+  "Hooks BODY onto HOOKS."
+  (declare (indent defun))
+  `(dolist (hook (if (not (listp ,hooks))
+		     (list ,hooks)
+		   ,hooks))
+     (add-hook hook (lambda () ,@body))))
+
+(defmacro ilambda (&rest body)
+  "Generates an interactive lambda function with no arguments that evaluates
+   BODY"
+  (declare (indent defun))
+  `(lambda () (interactive) ,@body))
 
 
 ;; INITIALIZE EMACS AND PACKAGES
 
+;; load path
 (add-to-list 'load-path user-emacs-directory)
+(let ((default-directory (concat user-emacs-directory "vendor/")))
+  (normal-top-level-add-subdirs-to-load-path))
+
+;; add custom package sources
+(add-to-list 'package-archives
+  '("marmalade" . "http://marmalade-repo.org/packages/") t)
+(add-to-list 'package-archives
+  '("melpa" . "http://melpa.milkbox.net/packages/") t)
+
+;;(package-refresh-contents)
+
+(package-initialize)
 
 ;; load emacs init files
 (progn
@@ -37,22 +106,13 @@
     (dolist (l (directory-files user-emacs-init-dir nil "^[^#].*el$"))
       (load (concat user-emacs-init-dir l)))))
 
-;; install and initialize user packages
-(require 'auto-package)
-(load "user-packages")
-(if (not (fboundp 'user-packages)) (defvar user-packages '()))
-(autopkg-install-missing-packages user-packages)
-(autopkg-initialize-packages user-packages)
-
-;; load vendor packages
-(let ((default-directory (concat user-emacs-directory "vendor/")))
-  (normal-top-level-add-subdirs-to-load-path))
+;; load package init files
 (progn
-  (setq user-vendor-init-dir (concat user-emacs-directory "vendor-init/"))
-  (when (file-exists-p user-vendor-init-dir)
-    (dolist (l (directory-files user-vendor-init-dir nil "^[^#].*el$"))
-      (load (concat user-vendor-init-dir l)))))
+  (setq user-package-init-dir (concat user-emacs-directory "package-init/"))
+  (when (file-exists-p user-package-init-dir)
+    (dolist (l (directory-files user-package-init-dir nil "^[^#].*el$"))
+      (load (concat user-package-init-dir l)))))
 
 ;; load custom file
-(setq custom-file "~/.emacs.d/.emacs-custom.el")
-(load custom-file)
+ (setq custom-file "~/.emacs.d/.emacs-custom.el")
+ (load custom-file)

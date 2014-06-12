@@ -1,12 +1,10 @@
-(defun c++-mode-setup ()
-  (after 'key-chord
-    (key-chord-define c++-mode-map "--" "->")
-    (key-chord-define c-mode-base-map ";;"
-		      '(lambda () (interactive) (end-of-line) (insert ";")))
-    (key-chord-define c-mode-base-map "{{"
-		      '(lambda () (interactive) (end-of-line) (insert " {}")
-			 (backward-char)))
-    (key-chord-define c-mode-map "--" "->")))
+(use-package 'cc-mode
+  :defer t
 
-(add-hook 'c++-mode-hook 'c++-mode-setup)
-(add-hook 'c-mode-hook 'c++-mode-setup)
+  :init
+  (hook 'c-mode-common-hook
+    (after 'key-chord
+      (key-chord-define c-mode-map "--" "->")
+      (key-chord-define c++-mode-map "--" "->")
+      (key-chord-define c-mode-base-map ";;" "\C-e;")
+      (key-chord-define c-mode-base-map "{{" "\C-e {"))))

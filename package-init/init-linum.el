@@ -1,6 +1,6 @@
-(require 'linum)
-
-(setq linum-format "%3d ")
-(global-linum-mode 1)
-
-(add-hook 'term-mode-hook '(lambda () (linum-mode 0)))
+(use-package 'linum
+  :config
+  (progn
+    (setq linum-format "%3d ")
+    (global-linum-mode 1)
+    (hook 'term-mode-hook (linum-mode 0))))

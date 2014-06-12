@@ -1,3 +1,8 @@
-(key-chord-mode 1)
-(setq key-chord-two-keys-delay .08)
-(setq key-chord-one-key-delay .16)
+(use-package 'key-chord
+  :install t
+
+  :config
+  (progn
+    (key-chord-mode 1)
+    (setq key-chord-two-keys-delay .08)
+    (setq key-chord-one-key-delay .16)))

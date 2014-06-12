@@ -1,1 +1,5 @@
-(window-numbering-mode 1)
+(use-package 'window-numbering
+  :install t
+
+  :config
+  (window-numbering-mode 1))

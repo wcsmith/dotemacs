@@ -1,8 +1,14 @@
-(add-hook 'sgml-mode-hook 'emmet-mode)
-(add-hook 'css-mode-hook 'emmet-mode)
+(use-package 'emmet-mode
+  :install t
+  :defer t
 
-(add-hook 'emmet-after-hook
-	  '(lambda () (local-set-key (kbd "M-/") 'emmet-expand-yas)))
+  :init
+  (hook '(sgml-mode-hook
+	  css-mode-hook)
+    (emmet-mode 1))
 
-(after 'emmet-mode
-  (setq emmet-move-cursor-between-quotes t))
+  :config
+  (progn
+    (setq emmet-move-cursor-between-quotes t)
+    (hook 'emmet-after-hook
+      (local-set-key (kbd "M-/") 'emmet-expand-yas))))

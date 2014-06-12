@@ -12,6 +12,7 @@
 
   (after 'evil
     (evil-define-key 'normal dired-mode-map "." 'dired-up-directory)
+    (evil-define-key 'normal dired-mode-map "%" 'dired-mark-files-regexp)
     (evil-define-key 'normal dired-mode-map "e" 'wdired-change-to-wdired-mode)
     (evil-define-key 'normal dired-mode-map "?" 'evil-search-backward)
     (evil-define-key 'normal dired-mode-map "n" 'evil-search-next)
