@@ -16,15 +16,10 @@ Get it with:
 - `.emacs-custom.el` - contains emacs customizations.
   
 ### Packages
-Packages are stored in two directories:
 - `vendor/` - contains manually installed third party packages.
-- `elpa/` - contains packages installed automatically via the Emacs package
+- `elpa/` - contains packages automatically installed via the Emacs package
   manager.
+- `package-init/` - contains all package initialization files.
 
-Packages are configured
-- `package-init/` - contains package initialization files.
-
-
-
+### Snippets
 - `snippets/` - contains user snippets for `yasnippet`
-
