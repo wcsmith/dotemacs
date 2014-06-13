@@ -22,3 +22,14 @@
 
 ;; show parens
 (show-paren-mode t)
+
+;; ignore some alerts
+(setq ring-bell-function
+      (lambda ()
+	(unless (memq this-command
+		      '(isearch-abort
+			minibuffer-keyboard-quit
+			abort-recursive-edit
+			exit-minibuffer
+			keyboard-quit))
+	  (ding))))
