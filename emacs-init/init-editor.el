@@ -2,7 +2,11 @@
 (blink-cursor-mode -1)
 
 ;; no tabs
-(setq tab-width 4 indent-tabs-mode nil)
+(setq tab-width 4
+      indent-tabs-mode nil)
+
+;; cleanup whitespace
+(add-hook 'before-save-hook 'delete-trailing-whitespace)
 
 ;; no backups
 (setq make-backup-files nil)
@@ -26,10 +30,12 @@
 ;; ignore some alerts
 (setq ring-bell-function
       (lambda ()
-	(unless (memq this-command
-		      '(isearch-abort
-			minibuffer-keyboard-quit
-			abort-recursive-edit
-			exit-minibuffer
-			keyboard-quit))
-	  (ding))))
+        (unless (memq this-command
+                      '(isearch-abort
+                        minibuffer-keyboard-quit
+                        abort-recursive-edit
+                        exit-minibuffer
+                        evil-forward-char
+                        evil-backward-char
+                        keyboard-quit))
+          (ding))))
