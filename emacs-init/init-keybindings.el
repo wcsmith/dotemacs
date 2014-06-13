@@ -4,6 +4,7 @@
 
 ;; aborts
 (global-set-key (kbd "M-g") 'keyboard-quit)
+(define-key isearch-mode-map [escape] 'isearch-abort)
 
 ;; scrolling
 (global-set-key (kbd "M-;") 'recenter-top-bottom)
