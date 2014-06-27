@@ -2,8 +2,8 @@
 (blink-cursor-mode -1)
 
 ;; no tabs
-(setq tab-width 4
-      indent-tabs-mode nil)
+(setq tab-width 4)
+(setq-default indent-tabs-mode nil)
 
 ;; cleanup whitespace
 (add-hook 'before-save-hook 'delete-trailing-whitespace)
