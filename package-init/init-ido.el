@@ -6,7 +6,8 @@
     (setq ido-use-virtual-buffers t)
     (setq ido-auto-merge-delay-time nil)
     (setq ido-auto-merge-work-directories-length -1)
-    
+    (setq ido-show-dot-for-dired t)
+
     (hook 'ido-setup-hook
       (define-key ido-file-completion-map "+" 'ido-make-directory)
       (define-key ido-file-completion-map "\M-k" 'ido-prev-match)
