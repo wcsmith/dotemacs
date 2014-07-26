@@ -10,8 +10,8 @@
     (setq evil-leader/in-all-states t)
     (setq evil-leader/non-normal-prefix "")
 
-    ;; insert 
-    (evil-leader/set-key "\\" (lambda () (interactive) (insert-char ?\\)))
+    ;; insert
+    (evil-leader/set-key "\\" (ilambda (insert-char ?\\)))
 
     ;; compile (c)
     (evil-leader/set-key "c c" 'recompile)
@@ -20,14 +20,14 @@
     ;; gdb (d)
     (evil-leader/set-key "d g" 'gdb)
     (evil-leader/set-key "d w" 'gdb-restore-windows)
-    (evil-leader/set-key "d c" '(lambda () (interactive) (gdb-select-window 'comint)))
-    (evil-leader/set-key "d l" '(lambda () (interactive) (gdb-select-window 'locals)))
-    (evil-leader/set-key "d r" '(lambda () (interactive) (gdb-select-window 'registers)))
-    (evil-leader/set-key "d s" '(lambda () (interactive) (gdb-select-window 'source)))
-    (evil-leader/set-key "d f" '(lambda () (interactive) (gdb-select-window 'stack)))
-    (evil-leader/set-key "d b" '(lambda () (interactive) (gdb-select-window 'breakpoints)))
-    (evil-leader/set-key "d t" '(lambda () (interactive) (gdb-select-window 'threads)))
-    (evil-leader/set-key "d x" '(lambda () (interactive) (gdb-select-window 'source)
+    (evil-leader/set-key "d c" '(ilambda (gdb-select-window 'comint)))
+    (evil-leader/set-key "d l" '(ilambda (gdb-select-window 'locals)))
+    (evil-leader/set-key "d r" '(ilambda (gdb-select-window 'registers)))
+    (evil-leader/set-key "d s" '(ilambda (gdb-select-window 'source)))
+    (evil-leader/set-key "d f" '(ilambda (gdb-select-window 'stack)))
+    (evil-leader/set-key "d b" '(ilambda (gdb-select-window 'breakpoints)))
+    (evil-leader/set-key "d t" '(ilambda (gdb-select-window 'threads)))
+    (evil-leader/set-key "d x" '(ilambda (gdb-select-window 'source)
 				  (delete-other-windows)))
 
     ;; find stuff (f)

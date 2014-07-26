@@ -76,7 +76,7 @@
 (after 'projectile
   (define-key fast-map "p" 'projectile-switch-project)
   (define-key fast-map "B" 'projectile-switch-to-buffer)
-  (define-key fast-map "f" (lambda () (interactive)
+  (define-key fast-map "f" (ilambda
 			     (if (projectile-project-p)
 				 (projectile-find-file)
 			       (ido-find-file)))))
@@ -119,7 +119,7 @@
   (if (eq nil (ignore-errors (yas-next-field)))
       (progn
 	(indent-according-to-mode)
-	(if (or 
+	(if (or
 	     (string= (string (following-char)) "\"")
 	     (string= (string (following-char)) "'")
 	     (string= (string (following-char)) ")")
