@@ -50,7 +50,7 @@
 	`(ensure-installed (quote ,package)))
      ;; init and config
      ,(if (not requires)
-	  `(progn 
+	  `(progn
 	     ,init
 	     ,(if defer
 		  `(after ,package ,config)
@@ -100,19 +100,26 @@
 (unless package-archive-contents
   (package-refresh-contents))
 
+;; load local init files
+(progn
+  (setq user-local-init-dir (concat user-home-directory "local-init/"))
+  (when (file-exists-p user-local-init-dir)
+    (dolist (l (directory-files user-local-init-dir nil "^[^#].*el$"))
+      (with-demoted-errors (load (concat user-local-init-dir l))))))
+
 ;; load emacs init files
 (progn
   (setq user-emacs-init-dir (concat user-emacs-directory "emacs-init/"))
   (when (file-exists-p user-emacs-init-dir)
     (dolist (l (directory-files user-emacs-init-dir nil "^[^#].*el$"))
-      (load (concat user-emacs-init-dir l)))))
+      (with-demoted-errors (load (concat user-emacs-init-dir l))))))
 
 ;; load package init files
 (progn
   (setq user-package-init-dir (concat user-emacs-directory "package-init/"))
   (when (file-exists-p user-package-init-dir)
     (dolist (l (directory-files user-package-init-dir nil "^[^#].*el$"))
-      (load (concat user-package-init-dir l)))))
+      (with-demoted-errors(load (concat user-package-init-dir l))))))
 
 ;; load custom file
  (setq custom-file "~/.emacs.d/.emacs-custom.el")
