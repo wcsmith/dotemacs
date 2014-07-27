@@ -20,7 +20,6 @@
 
 ;; mark ring
 (global-set-key (kbd "M-<") (ilambda (set-mark-command t)))
-(global-set-key (kbd "M->") 'push-mark)
 
 ;; newline
 (global-set-key (kbd "RET") 'newline-and-indent)
@@ -69,6 +68,7 @@
 
 ;; imenu
 (define-key fast-map "g" 'imenu)
+(define-key fast-map "G" 'imenu)
 (after 'imenu-anywhere
   (define-key fast-map "g" 'imenu-anywhere))
 
