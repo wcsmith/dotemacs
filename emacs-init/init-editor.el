@@ -30,6 +30,9 @@
 ;; unique buffer names
 (toggle-uniquify-buffer-names)
 
+;; revert buffers automatically
+(global-auto-revert-mode)
+
 ;; ignore some alerts
 (setq ring-bell-function
       (lambda ()
