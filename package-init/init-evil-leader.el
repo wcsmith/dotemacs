@@ -7,7 +7,6 @@
     (global-evil-leader-mode t)
 
     ;; override vanilla evil
-    (setq evil-leader/in-all-states t)
     (setq evil-leader/non-normal-prefix "")
 
     ;; insert
