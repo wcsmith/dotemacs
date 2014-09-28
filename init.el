@@ -102,7 +102,7 @@
 
 ;; load local init files
 (progn
-  (setq user-local-init-dir (concat user-home-directory "local-init/"))
+  (setq user-local-init-dir (concat user-home-directory ".emacs.d.local/local-init/"))
   (when (file-exists-p user-local-init-dir)
     (dolist (l (directory-files user-local-init-dir nil "^[^#].*el$"))
       (with-demoted-errors (load (concat user-local-init-dir l))))))
