@@ -27,6 +27,9 @@
 ;; show parens
 (show-paren-mode t)
 
+;; unique buffer names
+(toggle-uniquify-buffer-names)
+
 ;; ignore some alerts
 (setq ring-bell-function
       (lambda ()
