@@ -5,9 +5,6 @@
 (setq tab-width 4)
 (setq-default indent-tabs-mode nil)
 
-;; cleanup whitespace
-(add-hook 'before-save-hook 'delete-trailing-whitespace)
-
 ;; no backups
 (setq make-backup-files nil)
 

@@ -2,4 +2,6 @@
   :install t
 
   :init
-  (add-hook 'js-mode-hook 'js2-minor-mode))
+  (progn
+    (setq js2-mode-version emacs-major-version)
+    (add-to-list 'auto-mode-alist '("\\.js$" . js2-mode)))
