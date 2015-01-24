@@ -42,3 +42,7 @@
                         evil-backward-char
                         keyboard-quit))
           (ding))))
+
+;; always split windows vertically
+(setq split-height-threshold nil)
+(setq split-width-threshold 160)
