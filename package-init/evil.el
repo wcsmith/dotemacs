@@ -38,23 +38,4 @@
     (define-key evil-normal-state-map (kbd "M-.") 'nil)
 
     ;; jump
-    (define-key evil-motion-state-map (kbd "go") 'evil-jump-item)
-
-    ;; lists
-    (define-key evil-normal-state-map (kbd "M-H") 'backward-up-list)
-    (define-key evil-normal-state-map (kbd "M-L") 'up-list)
-    (define-key evil-normal-state-map (kbd "H") 'paredit-backward)
-    (define-key evil-normal-state-map (kbd "L") 'paredit-forward)
-
-    (define-key evil-normal-state-map (kbd "gll") 'paredit-forward-slurp-sexp)
-    (define-key evil-normal-state-map (kbd "ghh") 'paredit-backward-slurp-sexp)
-    (define-key evil-normal-state-map (kbd "glh") 'paredit-forward-barf-sexp)
-    (define-key evil-normal-state-map (kbd "ghl") 'paredit-backward-barf-sexp)
-
-    ;; move in insert
-    (define-key evil-insert-state-map (kbd "M-l") 'forward-char)
-    (define-key evil-insert-state-map (kbd "M-h") 'backward-char)
-
-    ;; ace jump
-    (after 'ace-jump-mode
-      (define-key evil-normal-state-map (kbd "gw") 'evil-ace-jump-word-mode))))
+    (define-key evil-motion-state-map (kbd "go") 'evil-jump-item)))
