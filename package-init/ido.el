@@ -14,7 +14,7 @@
       (define-key ido-common-completion-map "\M-k" 'ido-prev-match)
       (define-key ido-file-completion-map "+" 'ido-make-directory)
       (define-key ido-file-completion-map "\M-d" 'ido-delete-file-at-head)
-      (define-key ido-file-completion-map "\M-j" 'ido-prev-match)
+      (define-key ido-file-completion-map "\M-j" 'ido-next-match)
       (define-key ido-file-completion-map "\M-k" 'ido-prev-match)
       (define-key minibuffer-local-map (kbd "<M-return>") 'ido-select-text)
       (define-key minibuffer-local-map "\M-j" 'ido-next-match)
