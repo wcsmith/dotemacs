@@ -13,6 +13,7 @@
     (diminish-after 'emmet-mode 'emmet-mode "zen")))
     (diminish-after 'flycheck 'flycheck-mode "fc")
     (diminish-after 'ggtags 'ggtags-mode "gg")
+    (diminish-after 'history 'history-mode nil)
     (diminish-after 'magit 'magit-auto-revert-mode nil)
     (diminish-after 'projectile 'projectile-mode nil)
     (diminish-after 'undo-tree 'undo-tree-mode nil)

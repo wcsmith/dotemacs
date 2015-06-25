@@ -18,9 +18,6 @@
 ;; quit
 (global-set-key (kbd "M-q") 'keyboard-quit)
 
-;; mark ring
-(global-set-key (kbd "M-<") (ilambda (set-mark-command t)))
-
 ;; newline
 (global-set-key (kbd "RET") 'newline-and-indent)
 
@@ -65,6 +62,11 @@
 (define-key fast-map "k" 'kill-this-buffer)
 (define-key fast-map "s" 'save-buffer)
 (define-key fast-map "d" 'dired)
+
+(after 'history
+  (define-key fast-map "h" 'history-add-history)
+  (global-set-key (kbd "M-(") 'history-next-history)
+  (global-set-key (kbd "M-*") 'history-prev-history))
 
 ;; imenu
 (define-key fast-map "g" 'imenu)
