@@ -7,7 +7,6 @@
       inhibit-startup-echo-area-message t)
 
 ;; text size
-;;(set-frame-font "Inconsolatazi4")
 (set-face-attribute 'default nil :height 115)
 
 ;; highlight line

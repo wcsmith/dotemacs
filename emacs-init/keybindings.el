@@ -59,9 +59,12 @@
 (define-key fast-map "B" 'switch-to-buffer)
 (define-key fast-map "b" 'switch-to-buffer)
 (define-key fast-map "K" 'kill-buffer)
-(define-key fast-map "k" 'kill-this-buffer)
+(define-key fast-map "k" 'server-edit-or-kill-buffer)
 (define-key fast-map "s" 'save-buffer)
 (define-key fast-map "d" 'dired)
+
+(after 'term
+  (define-key term-mode-map (kbd "C-v") 'term-paste))
 
 (after 'history
   (define-key fast-map "h" 'history-add-history)

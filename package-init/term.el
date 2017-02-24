@@ -28,3 +28,9 @@
 		  (progn (term shell-file-name))))))
     (term-send-string term
 		      (file-relative-name (ido-read-file-name "Change to: " nil nil t)))))
+
+(defun my-term-edit-external ()
+  (interactive)
+  (term-send-raw-string "\C-x")
+  (term-send-raw-string "\C-e"))
+(define-key fast-map "t" 'my-term-edit-external)

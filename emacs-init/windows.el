@@ -45,3 +45,16 @@ all other windows"
 	   (set-window-buffer primary-window new-primary-buffer)
 	   (select-window-by-number 1))
     (recenter)))
+
+(defun server-edit-or-kill-buffer ()
+  "does server-edit or kill-this-buffer."
+  (interactive)
+  (if server-buffer-clients
+      (server-edit)
+    (kill-this-buffer)))
+
+(defun server-edit-or-kill-buffer-after-save ()
+  "does server-edit or kill-this-buffer after saving."
+  (interactive)
+  (save-buffer)
+  (server-edit-or-kill-buffer))

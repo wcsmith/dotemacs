@@ -37,5 +37,9 @@
     (define-key evil-insert-state-map (kbd "M-.") 'nil)
     (define-key evil-normal-state-map (kbd "M-.") 'nil)
 
+    ;; :wq and :q
+    (evil-ex-define-cmd "q[uit]" 'server-edit-or-kill-buffer)
+    (evil-ex-define-cmd "wq" 'server-edit-or-kill-buffer-after-save)
+
     ;; jump
     (define-key evil-motion-state-map (kbd "go") 'evil-jump-item)))

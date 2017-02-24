@@ -3,7 +3,7 @@
 
   :config
   (progn
-    (defadvice ido-init-completion-maps (after ido-init-completion-maps-with-other-window-keys activate)
+    (defadvice ido-setup-completion-map (after ido-setup-completion-map-with-other-window-keys activate)
       (mapcar (lambda (map)
 		(define-key map (kbd "M-o") 'ido-invoke-in-other-window)
 		(define-key map (kbd "M-2") 'ido-invoke-in-vertical-split)
@@ -13,5 +13,4 @@
 	      (list ido-buffer-completion-map
 		    ido-common-completion-map
 		    ido-file-completion-map
-		    ido-file-dir-completion-map)))
-    (ad-activate 'ido-init-completion-maps)))
+		    ido-file-dir-completion-map)))))
