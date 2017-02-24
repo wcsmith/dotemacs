@@ -4,3 +4,6 @@
 [submodule "vendor/evil-plugins"]
 	path = vendor/evil-plugins
 	url = https://github.com/tarao/evil-plugins.git
+[submodule "vendor/e-sink"]
+	path = vendor/e-sink
+	url = https://github.com/lewang/e-sink.git
