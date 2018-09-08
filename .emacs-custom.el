@@ -5,7 +5,7 @@
  ;; If there is more than one, they won't work right.
  '(package-selected-packages
    (quote
-    (yasnippet with-editor skewer-mode shell-pop projectile multiple-cursors ido-ubiquitous ggtags flycheck f expand-region evil-nerd-commenter evil-matchit emmet-mode async))))
+    (evil-surround itail flx-ido yasnippet with-editor skewer-mode shell-pop projectile multiple-cursors ido-ubiquitous flycheck f expand-region evil-nerd-commenter evil-matchit emmet-mode async))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.

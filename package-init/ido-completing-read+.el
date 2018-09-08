@@ -1,4 +1,4 @@
-(use-package 'ido-ubiquitous
+(use-package 'ido-completing-read+
   :install t
   :requires 'ido
 

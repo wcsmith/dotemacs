@@ -15,6 +15,10 @@
 ;; show column number
 (setq column-number-mode t)
 
+;; fill at 80 chars with single spaces
+(setq-default fill-column 80)
+(setq sentence-end-double-space nil)
+
 ;; y-or-n
 (defalias 'yes-or-no-p 'y-or-n-p)
 
